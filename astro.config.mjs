@@ -3,6 +3,7 @@ import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 export default defineConfig({
-    site: "http://localhost:4321",
+    site: "http://charis02.github.io",
+    base: "cyprus_webpage",
     integrations: [tailwind()],
   });
