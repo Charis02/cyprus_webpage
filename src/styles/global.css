@@ -7,7 +7,7 @@ a,
 }
 
 .gradient-text {
-  line-height: 1.2; /* Adjust this value as needed, possibly higher */
+  line-height: 1.3; /* Adjust this value as needed, possibly higher */
   @apply bg-clip-text text-transparent;
   @apply bg-gradient-to-br from-yellow-400 via-yellow-500 to-yellow-600;
 }
