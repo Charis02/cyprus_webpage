@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
 import Splash from "../components/splash.astro";
 import VisionMission from "../components/VisionMission.astro"; // Corrected import
+import FlagshipProgram from '../components/FlagshipProgram.astro';
 import "../styles/index.css";
 
 const { generator, site } = Astro;
@@ -59,9 +60,9 @@ const description = "Astro is a new kind of static site builder that delivers li
 
 
 <section id="more-info" class="h-screen bg-white">
-	<div class="container mx-auto p-8">
+	<div class="container mx-auto p-8 bg-white">
 		<VisionMission />
-	  <!-- Add more content here -->
+		<FlagshipProgram />
 	</div>
   </section>
 	  	
