@@ -1,0 +1,40 @@
+---
+import Person from './Person.astro';
+import samplePerson from '../assets/sample_person.jpg';
+
+// Sample data for the team members
+const teamMembers = [
+  {
+    image: samplePerson,
+    name: 'Alice Smith',
+    education: 'MIT',
+    description: 'Software engineer, entrepreneur and educator. I love to teach and share my knowledge with others.',
+  },
+  {
+    image: samplePerson,
+    name: 'Bob Johnson',
+    education: 'Stanford University',
+    description: 'Full-stack developer with a passion for building beautiful and functional websites.'
+  },
+  {
+    image: samplePerson,
+    name: 'Charlie Davis',
+    education: 'Harvard University',
+    description: 'Startup enthusiast and tech blogger. I write about the latest trends in technology and business.'
+  },
+  // Add more team members as needed
+];
+---
+<section class="team p-8">
+  <div class="gradient-text text-center font-extrabold tracking-tighter text-4xl md:text-8xl text-shadow mb-8">Our Team</div>
+  <div class="team-members grid grid-cols-1 md:grid-cols-3 gap-8 justify-items-center">
+    {teamMembers.map((member) => (
+      <Person
+        image={member.image}
+        name={member.name}
+        education={member.education}
+        description={member.description}
+      />
+    ))}
+  </div>
+</section>

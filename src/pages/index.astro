@@ -2,6 +2,7 @@
 import Splash from "../components/splash.astro";
 import VisionMission from "../components/VisionMission.astro"; // Corrected import
 import FlagshipProgram from '../components/FlagshipProgram.astro';
+import Team from '../components/Team.astro';
 import Footer from '../components/Footer.astro';
 import "../styles/index.css";
 
@@ -62,9 +63,25 @@ const description = "Bridging Cypriot Youth Through Tech Education";
 	<div class="container mx-auto p-8 bg-white">
 		<VisionMission />
 		<FlagshipProgram />
+		<!-- Button to scroll to the team section. Is in the middle of the page horizontally -->
+		<div class="flex justify-center">
+		<a href="#team-section" class="scroll-button">
+			<button class=" rounded-full p-4 shadow-lg transition duration-150 flex items-center justify-center bg-gradient-to-br from-yellow-600 via-yellow-500 to-yellow-400 px-12 pb-6 pt-5 text-xl font-extrabold leading-normal text-white hover:bg-yellow-400 hover:shadow-primary-2 focus:bg-yellow-500 focus:shadow-primary-2 hover:text-black focus:outline-none focus:ring-0 motion-reduce:transition-none dark:shadow-black/30 dark:hover:shadow-dark-strong dark:focus:shadow-dark-strong dark:active:shadow-dark-strong">
+				<span class="mr-2">Meet the Team</span>
+				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 13l-5 5m0 0l-5-5m5 5V6" />
+				</svg>
+			</button>
+		</a>
+		</div>
 	</div>
-  </section>
-	  	<Footer />
+</section>
+<section id="team-section" class="h-screen bg-default">
+	<div class="container mx-auto p-8">
+		<Team />
+	</div>
+</section>
+	<Footer />
 	</body>
 
 </html>

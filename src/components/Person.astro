@@ -1,0 +1,46 @@
+---
+import { Image } from 'astro:assets';
+
+export interface Props {
+  image: ImageMetadata;
+  name: string;
+  education: string;
+  description: string;
+}
+
+const { image, name, education, description } = Astro.props;
+---
+<div class="person flex flex-col items-center">
+  <Image src={image} alt={name} width={250} height={250} style={{ borderRadius: '50%' }} />
+  <div class="person-info">
+    <div class="person-name gradient-text text-center font-extrabold tracking-tighter text-4xl md:text-6xl text-shadow">{name}</div>
+    <div class="person-education">{education}</div>
+    <div class="person-description overflow-auto">{description}</div>
+  </div>
+</div>
+
+<style>
+.person {
+  text-align: center;
+  margin: 1rem;
+}
+
+.person-info {
+  font-family: Arial, sans-serif;
+}
+
+.person-name {
+  font-size: 2.4rem;
+  margin: 0;
+}
+
+.person-education {
+  font-size: 1rem;
+  color: #555;
+}
+
+.person-description {
+  font-size: 1.2rem;
+  margin: 1rem;
+}
+</style>
