@@ -4,11 +4,12 @@ import Card from '../components/Card.astro';
 import Splash from "../components/splash.astro";
 import VisionMission from "../components/VisionMission.astro"; // Corrected import
 import FlagshipProgram from '../components/FlagshipProgram.astro';
+import Footer from '../components/Footer.astro';
 import "../styles/index.css";
 
 const { generator, site } = Astro;
-const image = new URL("books_logo.png", site);
-const description = "Astro is a new kind of static site builder that delivers lightning-fast performance with a modern developer experience.";
+const image = new URL("socials.png", site);
+const description = "Bridging Cypriot Youth Through Tech Education.";
 ---
 
 <!doctype html>
@@ -23,7 +24,7 @@ const description = "Astro is a new kind of static site builder that delivers li
 		<meta name="description" content={description} />
 	
 		<!-- social media -->
-		<meta property="og:title" content="Astro" />
+		<meta property="og:title" content="Cyprus Initiative" />
 		<meta property="og:type" content="website" />
 		<meta property="og:description" content={description} />
 		<meta property="og:image" content={image} />
@@ -65,7 +66,7 @@ const description = "Astro is a new kind of static site builder that delivers li
 		<FlagshipProgram />
 	</div>
   </section>
-	  	
+	  	<Footer />
 	</body>
 
 </html>
