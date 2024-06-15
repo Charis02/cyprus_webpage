@@ -1,32 +1,41 @@
 ---
 import Starfield from "../components/starfield.astro";
-import oceanVideo from "../assets/ocean_aerial_view.mp4";
+import kidsImage from "../assets/kids.png";
+import { Image } from "astro:assets";
 
-const widths = [450, 800];
+const widths = [450, 706];
 const sizes = "(min-width: 640px) 42vw, 67vw";
 ---
 
 <section class="relative h-full">
-    <video autoplay muted loop id="bg-video">
-        <source src={oceanVideo} type="video/mp4">
-        Your browser does not support HTML5 video.
-    </video>
-    <div class="overlay"></div>
-    <div class="relative grid h-full place-items-center sm:grid-cols-2">
-      <h2 class="flex flex-col items-center gap-2 self-end sm:gap-4 sm:self-auto sm:justify-self-end">
-        <div class="gradient-text text-center font-extrabold tracking-tighter text-6xl md:text-8xl text-shadow">
-          Cypriot Youth
-          <br /> United 
-          <br /> 
-          Through Education.
-        </div>
-      </h2>
-      <div class="w-2/3 max-w-3xl self-start sm:w-10/12 sm:self-auto sm:justify-self-start flex justify-center">
-        <button id="learn-more" class="bg-yellow-500 text-black font-bold py-2 px-4 rounded hover:bg-yellow-400 transition-colors duration-200">
-          Learn More
-        </button>
+  <div class="relative grid h-full place-items-center sm:grid-cols-2 gap-8 px-8">
+    <h2 class="flex flex-col items-center gap-2 self-end sm:gap-4 sm:self-auto sm:justify-self-end">
+      <div class="gradient-text text-center font-extrabold tracking-tighter text-4xl md:text-6xl text-shadow">
+        Bridging Cypriot Youth
+        <br /> 
+        Through Tech Education.
       </div>
-    </div>
+    </h2>
+    <div class="w-full max-w-md self-start sm:w-10/12 sm:self-auto sm:justify-self-center flex flex-col items-center justify-center gap-4">
+      <Image
+        id="kids"
+        class="h-auto w-full object-cover"
+        src={kidsImage}
+        widths={widths}
+        sizes={sizes}
+        loading="eager"
+        alt="Kids jumping in the air with joy."
+      />
+      <button
+        type="button"
+        id="learn-more"
+        class="flex flex-col items-center justify-center place-items-center rounded-full bg-gradient-to-br from-yellow-600 via-yellow-500 to-yellow-400 px-12 pb-6 pt-5 text-xl font-extrabold leading-normal text-white shadow-primary-3 transition duration-150 ease-in-out hover:bg-yellow-400 hover:shadow-primary-2 focus:bg-yellow-500 focus:shadow-primary-2 hover:text-black focus:outline-none focus:ring-0 motion-reduce:transition-none dark:shadow-black/30 dark:hover:shadow-dark-strong dark:focus:shadow-dark-strong dark:active:shadow-dark-strong">
+    
+        Find out more.
+      </button>
+      </div>
+  </div>
+  
 </section>
 
 <noscript>
@@ -38,26 +47,6 @@ const sizes = "(min-width: 640px) 42vw, 67vw";
 </noscript>
 
 <style>
-  #bg-video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1;
-  }
-
-  .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.0); /* Semi-transparent white overlay */
-    z-index: -1;
-  }
-
   @keyframes float {
     0% {
       transform: translate3d(0, 0, 0);
@@ -68,10 +57,14 @@ const sizes = "(min-width: 640px) 42vw, 67vw";
     }
   }
 
+  #kids {
+    animation: float linear 2.5s infinite alternate;
+  }
+
   @media (prefers-reduced-motion: reduce) {
-    #astronaut {
-      animation: none;
-    }
+  #kids {
+    animation: none;
+  }
 
     :global(#starfield) {
       display: none;
