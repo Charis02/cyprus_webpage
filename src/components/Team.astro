@@ -1,6 +1,6 @@
 ---
 import Person from './Person.astro';
-import samplePerson from '../assets/sample_person.jpg';
+import samplePerson from '../assets/sample_person.webp';
 
 // Sample data for the team members
 const teamMembers = [
@@ -25,9 +25,10 @@ const teamMembers = [
   // Add more team members as needed
 ];
 ---
+
 <section class="team p-8">
-  <div class="gradient-text text-center font-extrabold tracking-tighter text-4xl md:text-8xl text-shadow mb-8">Our Team</div>
-  <div class="team-members grid grid-cols-1 md:grid-cols-3 gap-8 justify-items-center">
+  <div class="gradient-text text-center font-extrabold tracking-tighter text-4xl md:text-6xl text-shadow mb-8">Our Team</div>
+  <div class="team-members grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
     {teamMembers.map((member) => (
       <Person
         image={member.image}
